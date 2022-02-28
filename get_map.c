@@ -41,13 +41,13 @@ char **get_map(int fd)
 }
 
 
-int main()
-{
-	int fd = open("map.ber", O_RDONLY);
-	char **map = get_map(fd);
-	if (check_map(map))
-			printf("naaadi\n");
-	else
-		printf("khaaaari\n");
-	return 0;
-}
+// int main()
+// {
+// 	int fd = open("map.ber", O_RDONLY);
+// 	char **map = get_map(fd);
+// 	if (check_map(map))
+// 			printf("naaadi\n");
+// 	else
+// 		printf("khaaaari\n");
+// 	return 0;
+// }

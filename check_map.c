@@ -2,8 +2,8 @@
 
 size_t ft_strlen(const char *s)
 {
-	int i = 0;
-	while (s[i])
+	size_t i = 0;
+	while(s[i])
 		i++;
 	return i;
 }
@@ -28,7 +28,7 @@ int	check_1(char **map)
 		}
 		i++;
 	}
-	if (ascii[(unsigned char)'E'] != 1 || ascii[(unsigned char)'P'] != 1 || ascii[(unsigned char)'C'] == 0)
+	if (ascii[(unsigned char)'E'] == 0 || ascii[(unsigned char)'P'] != 1 || ascii[(unsigned char)'C'] == 0)
 		return (0);
 	return 1;
 }
@@ -50,7 +50,6 @@ int check_2(char **map)
 					return (0);
 				j++;
 			}
-			i++;
 		}
 		else
 			while (map[i][j])
@@ -59,7 +58,7 @@ int check_2(char **map)
 					return (0);
 				j++;
 			}
-			i++;
+		i++;
 	}
 	return (1);
 }
@@ -83,3 +82,13 @@ int check_map(char **map)
 		return 1;
 	return 0;
 }
+
+// int main()
+// {
+// 	int fd = open ("map.ber", O_RDONLY);
+// 	char **map = get_map(fd);
+// 	if (check_map(map))
+// 		printf("nadi\n");
+// 	else
+// 		printf("3yan\n");
+// }
