@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/02/28 06:22:02 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:42:15 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ typedef struct x_y {
 	int xp;
 	int yp;
 }	x_y;
+
+typedef struct cord {
+	int x;
+	int y;
+}	coord;
 
 char *get_next_line(int fd);
 int get_width(char **map);

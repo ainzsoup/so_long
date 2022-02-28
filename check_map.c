@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/02/28 15:00:16 by sgamraou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 size_t ft_strlen(const char *s)
@@ -28,7 +40,7 @@ int	check_1(char **map)
 		}
 		i++;
 	}
-	if (ascii[(unsigned char)'E'] == 0 || ascii[(unsigned char)'P'] != 1 || ascii[(unsigned char)'C'] == 0)
+	if (ascii[(unsigned char)'E'] != 1 || ascii[(unsigned char)'P'] != 1 || ascii[(unsigned char)'C'] == 0)
 		return (0);
 	return 1;
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/28 06:54:17 by sgamraou          #+#    #+#              #
+#    Updated: 2022/02/28 06:54:18 by sgamraou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 all:
 	cc -I /usr/local/include so_long.c get_next_line.c get_res.c check_map.c get_map.c draw_map.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit 
 

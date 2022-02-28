@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 06:54:33 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/02/28 14:42:09 by sgamraou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	draw_map(t_data data)
@@ -8,23 +20,8 @@ void	draw_map(t_data data)
 	void *exit = mlx_xpm_file_to_image(data.mlx_ptr, "./pics/exit.xpm", &res.xe, &res.ye);
 	void *sussy = mlx_xpm_file_to_image(data.mlx_ptr, "./pics/sussy.xpm", &res.xp, &res.yp);
 	void *item = mlx_xpm_file_to_image(data.mlx_ptr, "./pics/item.xpm", &res.xc, &res.yc);
-// this will fill out the background so i can draw other stuff on top of it //
 	int i = 0;
 	int j = 0;
-	while (data.map[j])
-	{
-		while (data.map[j][i])
-		{
-			mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, map_bg, 75 * i, 75 * j);
-			i++;
-		}
-		i = 0;
-		j++;
-	}
-	i = 0;
-	j = 0;
-
-// Now we draw other stuff //
 	while (data.map[j])
 	{
 		while (data.map[j][i])
@@ -45,4 +42,3 @@ void	draw_map(t_data data)
 		j++;
 	}
 }
-

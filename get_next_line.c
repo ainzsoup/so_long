@@ -1,17 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 06:54:48 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/02/28 07:13:44 by sgamraou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
-
-int BUFFER_SIZE = 1337;
-
-char	*ft_strdup(char *s);
-char *get_next_line(int fd)
-{
-	char	line[5000000] = {0};
-	int		i = 0;
-	while (read(fd, &line[i], 1) > 0)
-		if (line[i++] == '\n')
-			break ;
-	return ((line[0] != 0 && BUFFER_SIZE > 0)? ft_strdup(line) : NULL);
-}
 
 char	*ft_strdup(char *s)
 {
@@ -28,4 +27,14 @@ char	*ft_strdup(char *s)
 	}
 	s1[i] = 0;
 	return (s1);
+}
+
+char *get_next_line(int fd)
+{
+	char	line[5000000] = {0};
+	int		i = 0;
+	while (read(fd, &line[i], 1) > 0)
+		if (line[i++] == '\n')
+			break ;
+	return ((line[0] != 0)? ft_strdup(line) : NULL);
 }
