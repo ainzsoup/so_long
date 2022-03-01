@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/02/28 11:42:15 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:45:14 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #include <stddef.h>
 
 typedef struct info {
-	void	*mlx_ptr;
-	void	*win_ptr;
+	void	*mlx;
+	void	*win;
 	int		map_height;
 	int		map_width;
 	char 	**map;
@@ -46,6 +46,14 @@ typedef struct cord {
 	int y;
 }	coord;
 
+typedef struct pics{
+	void	*W;
+	void	*B;
+	void	*E;
+	void	*P;
+	void	*C;
+}	assets;
+
 char *get_next_line(int fd);
 int get_width(char **map);
 int	get_height(char **map);
@@ -53,6 +61,9 @@ size_t	ft_strlen(const char *s);
 int	check_map(char **map);
 char **get_map(int fd);
 void	draw_map(t_data data);
+coord	get_coord(t_data *data);
+int get_items(t_data data);
+int move(int keycode, t_data *data);
 
 
 

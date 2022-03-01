@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/02/28 06:54:39 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:38:29 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int lines(int fd)
 {
-	char *line;
-	int i = 0;
+	char	*line;
+	int 	i;
+	
+	i = 0;
 	line = get_next_line(fd);
 	if (!line)
 		return (-1);
@@ -31,11 +33,12 @@ int lines(int fd)
 
 char **store_map(int fd, int line)
 {
-	int j = 0;
-	char **map;
-	int end = line;
-	map = malloc(sizeof(char *) * (end + 1));
-	while (j < end)
+	int		j;
+	char	**map;
+
+	j = 0;
+	map = malloc(sizeof(char *) * (line + 1));
+	while (j < line)
 	{
 		map[j] = get_next_line(fd);
 		j++;
@@ -46,20 +49,10 @@ char **store_map(int fd, int line)
 
 char **get_map(int fd)
 {
-	int line = lines(fd);
+	int line;
+	
+	line = lines(fd);
 	close (fd);
 	fd = open ("map.ber", O_RDONLY);
 	return(store_map(fd, line));
 }
-
-
-// int main()
-// {
-// 	int fd = open("map.ber", O_RDONLY);
-// 	char **map = get_map(fd);
-// 	if (check_map(map))
-// 			printf("naaadi\n");
-// 	else
-// 		printf("khaaaari\n");
-// 	return 0;
-// }

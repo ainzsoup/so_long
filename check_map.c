@@ -6,19 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/02/28 15:00:16 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:35:10 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-size_t ft_strlen(const char *s)
-{
-	size_t i = 0;
-	while(s[i])
-		i++;
-	return i;
-}
 
 int	check_1(char **map)
 {
