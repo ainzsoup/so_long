@@ -6,17 +6,17 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/02/28 15:38:29 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:31:48 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int lines(int fd)
+int	lines(int fd)
 {
 	char	*line;
-	int 	i;
-	
+	int		i;
+
 	i = 0;
 	line = get_next_line(fd);
 	if (!line)
@@ -24,14 +24,14 @@ int lines(int fd)
 	while (line)
 	{
 		if (!line[0] || line[0] == '\n')
-			break;
+			break ;
 		line = get_next_line(fd);
 		i++;
 	}
 	return (i);
 }
 
-char **store_map(int fd, int line)
+char	**store_map(int fd, int line)
 {
 	int		j;
 	char	**map;
@@ -44,15 +44,15 @@ char **store_map(int fd, int line)
 		j++;
 	}
 	map[j] = 0;
-	return map;
+	return (map);
 }
 
-char **get_map(int fd)
+char	**get_map(int fd)
 {
-	int line;
-	
+	int	line;
+
 	line = lines(fd);
 	close (fd);
 	fd = open ("map.ber", O_RDONLY);
-	return(store_map(fd, line));
+	return (store_map(fd, line));
 }

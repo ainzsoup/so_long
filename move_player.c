@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:21:21 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/01 15:08:59 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:44:21 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int move(int keycode, t_data *data)
 				mlx_destroy_window(data->mlx, data->win);
 				exit(0);
 			}
-	x_y res;
+	t_x_y res;
 	void *sussy = mlx_xpm_file_to_image(data->mlx, "P.xpm", &res.xp, &res.yp);
 	void *map_bg = mlx_xpm_file_to_image(data->mlx, "0.xpm", &res.x0, &res.y0);
 	void *wall = mlx_xpm_file_to_image(data->mlx, "W.xpm", &res.x1, &res.y1);
-	coord cord = get_coord(data);
+	t_coord cord = get_coord(data);
 	int c = get_items(*data);
 	if (keycode == 13)
 	{
