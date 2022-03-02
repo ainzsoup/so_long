@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:09:03 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:21:32 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void	draw_map(t_data data);
 t_coord	get_coord(t_data *data);
 int		get_items(t_data data);
 int		move(int keycode, t_data *data);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

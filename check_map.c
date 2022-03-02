@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:05:44 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:22:05 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int	check_1(char **map)
 {
 	int	i;
 	int	j;
-	int ascii[255] = {0};
+	int	ascii[255];
 
+	ft_memset(ascii, 0, sizeof(ascii));
 	i = 0;
 	j = 0;
 	while (map[i])
