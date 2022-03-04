@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:21:32 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/03 21:26:05 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 typedef struct info {
 	void	*mlx;
 	void	*win;
-	int		map_height;
-	int		map_width;
+	int		m_h;
+	int		m_w;
 	char	**map;
 }	t_data;
 
