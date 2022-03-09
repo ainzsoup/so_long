@@ -23,6 +23,7 @@ t_assets	get_files(t_data dt)
 	pics.p = mlx_xpm_file_to_image(dt.mlx, "P.xpm", &res.xp, &res.yp);
 	pics.c = mlx_xpm_file_to_image(dt.mlx, "C.xpm", &res.xc, &res.yc);
 	pics.t = mlx_xpm_file_to_image(dt.mlx, "T1.xpm", &res.xt, &res.yt);
+	pics.r = mlx_xpm_file_to_image(dt.mlx, "T2.xpm", &res.xr, &res.yr);
 	return (pics);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 14:13:24 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:06:58 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct t_files{
 	void	*b;
 	void	*w;
 	int		c;
+	void	*r;
+	void	*t;
 }	t_files;
 
 typedef struct i_j{
@@ -53,6 +55,8 @@ typedef struct x_y {
 	int	yp;
 	int	xt;
 	int	yt;
+	int	xr;
+	int	yr;
 }	t_x_y;
 
 typedef struct cord {
@@ -67,6 +71,7 @@ typedef struct pics{
 	void	*p;
 	void	*c;
 	void	*t;
+	void	*r;
 }	t_assets;
 
 char	*get_next_line(int fd);
@@ -85,6 +90,9 @@ void	move_up(t_data *d, t_coord o, t_files *f, int *count);
 void	move_down(t_data *d, t_coord o, t_files *f, int *count);
 void	move_left(t_data *d, t_coord o, t_files *f, int *count);
 void	move_right(t_data *d, t_coord o, t_files *f, int *count);
+void	init(t_files *f, t_data *data);
 int		imposter(char c);
+void	frame1(t_data *d, t_files f);
+void	frame2(t_data *d, t_files f);
 
 #endif
