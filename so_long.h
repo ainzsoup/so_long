@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 09:44:12 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:14:07 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stddef.h>
+
+typedef struct t_files{
+	void	*p;
+	void	*b;
+	void	*w;
+	int		c;
+}	t_files;
 
 typedef struct i_j{
 	int	i;
@@ -68,8 +75,12 @@ char	**get_map(int fd);
 void	draw_map(t_data data);
 t_coord	get_coord(t_data *data);
 int		get_items(t_data data);
-int		move(int keycode, t_data *data);
+int		game(int keycode, t_data *data);
 void	*ft_memset(void *b, int c, size_t len);
 t_index	just_index(t_index index);
+int		move_up(t_data *d, t_coord o, t_files f);
+int		move_down(t_data *d, t_coord o, t_files f);
+int		move_left(t_data *d, t_coord o, t_files f);
+int		move_right(t_data *d, t_coord o, t_files f);
 
 #endif
