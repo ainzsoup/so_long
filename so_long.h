@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:21:32 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 09:44:12 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@
 # include <stdio.h>
 # include <stddef.h>
 
+typedef struct i_j{
+	int	i;
+	int	j;
+}	t_index;
+
 typedef struct info {
 	void	*mlx;
 	void	*win;
-	int		map_height;
-	int		map_width;
-	char	**map;
+	int		h;
+	int		w;
+	char	**m;
 }	t_data;
 
 typedef struct x_y {
@@ -65,5 +70,6 @@ t_coord	get_coord(t_data *data);
 int		get_items(t_data data);
 int		move(int keycode, t_data *data);
 void	*ft_memset(void *b, int c, size_t len);
+t_index	just_index(t_index index);
 
 #endif

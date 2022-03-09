@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:10 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 08:58:03 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 09:46:46 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ t_coord	get_coord(t_data *data)
 
 	i = 0;
 	j = 0;
-	while (data->map[j])
+	while (data->m[j])
 	{
-		while (data->map[j][i])
+		while (data->m[j][i])
 		{
-			if (data->map[j][i] == 'P')
+			if (data->m[j][i] == 'P')
 				break ;
 			i++;
 		}
-		if (data->map[j][i] == 'P')
+		if (data->m[j][i] == 'P')
 			break ;
 		i = 0;
 		j++;
@@ -62,11 +62,11 @@ int	get_items(t_data data)
 	i = 0;
 	j = 0;
 	count = 0;
-	while (data.map[j])
+	while (data.m[j])
 	{
-		while (data.map[j][i])
+		while (data.m[j][i])
 		{
-			if (data.map[j][i] == 'C')
+			if (data.m[j][i] == 'C')
 				count++;
 			i++;
 		}

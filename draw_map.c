@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_map.c                                         :+:      :+:    :+:   */
+/*   draw_m.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,13 +27,13 @@ t_assets	get_files(t_data dt)
 
 void	put_image(t_data dt, int i, int j, t_assets pics)
 {
-	if (dt.map[j][i] == '1')
+	if (dt.m[j][i] == '1')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.w, 75 * i, 75 * j);
-	else if (dt.map[j][i] == 'P')
+	else if (dt.m[j][i] == 'P')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.p, 75 * i, 75 * j);
-	else if (dt.map[j][i] == 'E')
+	else if (dt.m[j][i] == 'E')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.e, 75 * i, 75 * j);
-	else if (dt.map[j][i] == 'C')
+	else if (dt.m[j][i] == 'C')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.c, 75 * i, 75 * j);
 	else
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.b, 75 * i, 75 * j);
@@ -48,9 +48,9 @@ void	draw_map(t_data dt)
 	pics = get_files(dt);
 	i = 0;
 	j = 0;
-	while (dt.map[j])
+	while (dt.m[j])
 	{
-		while (dt.map[j][i])
+		while (dt.m[j][i])
 		{
 			put_image(dt, i, j, pics);
 			i++;
