@@ -6,21 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:10 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:20:37 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 08:58:03 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 int	get_width(char **map)
 {
@@ -84,4 +74,11 @@ int	get_items(t_data data)
 		j++;
 	}
 	return (count);
+}
+
+t_index	just_index(t_index index)
+{
+	index.i = 0;
+	index.j = 0;
+	return (index);
 }
