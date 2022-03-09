@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 11:40:32 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 14:13:24 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct x_y {
 	int	yc;
 	int	xp;
 	int	yp;
+	int	xt;
+	int	yt;
 }	t_x_y;
 
 typedef struct cord {
@@ -64,6 +66,7 @@ typedef struct pics{
 	void	*e;
 	void	*p;
 	void	*c;
+	void	*t;
 }	t_assets;
 
 char	*get_next_line(int fd);
@@ -82,5 +85,6 @@ void	move_up(t_data *d, t_coord o, t_files *f, int *count);
 void	move_down(t_data *d, t_coord o, t_files *f, int *count);
 void	move_left(t_data *d, t_coord o, t_files *f, int *count);
 void	move_right(t_data *d, t_coord o, t_files *f, int *count);
+int		imposter(char c);
 
 #endif

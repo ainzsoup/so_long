@@ -22,6 +22,7 @@ t_assets	get_files(t_data dt)
 	pics.e = mlx_xpm_file_to_image(dt.mlx, "E.xpm", &res.xe, &res.ye);
 	pics.p = mlx_xpm_file_to_image(dt.mlx, "P.xpm", &res.xp, &res.yp);
 	pics.c = mlx_xpm_file_to_image(dt.mlx, "C.xpm", &res.xc, &res.yc);
+	pics.t = mlx_xpm_file_to_image(dt.mlx, "T1.xpm", &res.xt, &res.yt);
 	return (pics);
 }
 
@@ -35,8 +36,10 @@ void	put_image(t_data dt, int i, int j, t_assets pics)
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.e, 75 * i, 75 * j);
 	else if (dt.m[j][i] == 'C')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.c, 75 * i, 75 * j);
-	else
+	else if (dt.m[j][i] == '0')
 		mlx_put_image_to_window(dt.mlx, dt.win, pics.b, 75 * i, 75 * j);
+	else
+		mlx_put_image_to_window(dt.mlx, dt.win, pics.t, 75 * i, 75 * j);
 }
 
 void	draw_map(t_data dt)

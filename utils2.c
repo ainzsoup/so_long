@@ -1,48 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 06:54:48 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 14:12:23 by sgamraou         ###   ########.fr       */
+/*   Created: 2022/03/09 14:12:02 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/03/09 14:13:46 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*ft_strdup(char *s)
+int	imposter(char c)
 {
-	char	*s1;
-	int		i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	s1 = malloc(i + 1);
-	i = 0;
-	while (s[i])
-	{
-		s1[i] = s[i];
-		i++;
-	}
-	s1[i] = 0;
-	return (s1);
+	if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P'
+		&& c != 'X' && c != '\n')
+		return (1);
+	return (0);
 }
 
-char	*get_next_line(int fd)
+size_t	ft_strlen(const char *s)
 {
-	char	line[5000000];
-	int		i;
+	size_t	i;
 
-	ft_memset(line, 0, sizeof(line));
 	i = 0;
-	while (read(fd, &line[i], 1) > 0)
-		if (line[i++] == '\n')
-			break ;
-	if (line[0])
-		return (ft_strdup(line));
-	else
-		return (NULL);
+	while (s[i])
+		i++;
+	return (i);
 }

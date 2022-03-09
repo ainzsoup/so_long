@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 08:57:04 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 14:14:20 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int	check_1(char **m)
 			{
 				ascii[(unsigned char)m[x.i][x.j]] += 1;
 			}
-			if (m[x.i][x.j] != '0' && m[x.i][x.j] != '1' && m[x.i][x.j] != 'C'
-			&& m[x.i][x.j] != 'E' && m[x.i][x.j] != 'P' && m[x.i][x.j] != '\n')
+			if (imposter(m[x.i][x.j]))
 				return (0);
 			x.j++;
 		}
