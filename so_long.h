@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 11:14:07 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:40:32 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ int		get_items(t_data data);
 int		game(int keycode, t_data *data);
 void	*ft_memset(void *b, int c, size_t len);
 t_index	just_index(t_index index);
-int		move_up(t_data *d, t_coord o, t_files f);
-int		move_down(t_data *d, t_coord o, t_files f);
-int		move_left(t_data *d, t_coord o, t_files f);
-int		move_right(t_data *d, t_coord o, t_files f);
+void	move_up(t_data *d, t_coord o, t_files *f, int *count);
+void	move_down(t_data *d, t_coord o, t_files *f, int *count);
+void	move_left(t_data *d, t_coord o, t_files *f, int *count);
+void	move_right(t_data *d, t_coord o, t_files *f, int *count);
 
 #endif

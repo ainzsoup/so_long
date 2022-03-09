@@ -6,17 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:21:21 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 11:13:42 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:37:35 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	moves(int *count)
-{
-	*count += 1;
-	printf("%d moves.\n", *count);
-}
 
 void	destroy(t_data *data)
 {
@@ -45,24 +39,12 @@ int	game(int keycode, t_data *data)
 	if (keycode == 53)
 		destroy(data);
 	if (keycode == 13)
-	{
-		if (move_up(data, co, f))
-			moves(&count);
-	}
+		move_up(data, co, &f, &count);
 	if (keycode == 1)
-	{
-		if (move_down(data, co, f))
-			moves(&count);
-	}
+		move_down(data, co, &f, &count);
 	if (keycode == 0)
-	{
-		if (move_left(data, co, f))
-			moves(&count);
-	}
+		move_left(data, co, &f, &count);
 	if (keycode == 2)
-	{
-		if (move_right(data, co, f))
-			moves(&count);
-	}
+		move_right(data, co, &f, &count);
 	return (0);
 }
