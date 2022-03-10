@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 16:40:25 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/10 21:21:28 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct t_files{
 	void	*r;
 	void	*t;
 	void	*n;
+	void	*a;
 }	t_files;
 
 typedef struct i_j{
@@ -60,6 +61,8 @@ typedef struct x_y {
 	int	yr;
 	int	xn;
 	int	yn;
+	int	xa;
+	int	ya;
 }	t_x_y;
 
 typedef struct cord {

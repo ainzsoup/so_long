@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:34:11 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 14:11:12 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/10 21:53:32 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	move_up(t_data *d, t_coord o, t_files *f, int *count)
 	|| d->m[o.y - 1][o.x] == 'X'
 	|| (d->m[o.y - 1][o.x] == 'E' && (*f).c == 0))
 	{	
+		mlx_put_image_to_window(d->mlx, d->win, f->n, 0, 0);
+		mlx_string_put(d->mlx, d->win, 160, 25, 0xffffff, ft_itoa(*count + 1));
 		if (d->m[o.y][o.x] == 'C')
 			(*f).c--;
 		mlx_put_image_to_window(d->mlx, d->win, (*f).p,
@@ -43,6 +45,8 @@ void	move_down(t_data *d, t_coord o, t_files *f, int *count)
 	|| d->m[o.y + 1][o.x] == 'X'
 	|| (d->m[o.y + 1][o.x] == 'E' && (*f).c == 0))
 	{	
+		mlx_put_image_to_window(d->mlx, d->win, f->n, 0, 0);
+		mlx_string_put(d->mlx, d->win, 160, 25, 0xffffff, ft_itoa(*count + 1));
 		if (d->m[o.y][o.x] == 'C')
 			(*f).c--;
 		mlx_put_image_to_window(d->mlx, d->win, (*f).p,
@@ -68,6 +72,8 @@ void	move_left(t_data *d, t_coord o, t_files *f, int *count)
 	|| d->m[o.y][o.x - 1] == 'X'
 	|| (d->m[o.y][o.x - 1] == 'E' && (*f).c == 0))
 	{	
+		mlx_put_image_to_window(d->mlx, d->win, f->n, 0, 0);
+		mlx_string_put(d->mlx, d->win, 160, 25, 0xffffff, ft_itoa(*count + 1));
 		if (d->m[o.y][o.x] == 'C')
 			(*f).c--;
 		mlx_put_image_to_window(d->mlx, d->win, (*f).p,
@@ -93,6 +99,8 @@ void	move_right(t_data *d, t_coord o, t_files *f, int *count)
 	|| d->m[o.y][o.x + 1] == 'X'
 	|| (d->m[o.y][o.x + 1] == 'E' && (*f).c == 0))
 	{	
+		mlx_put_image_to_window(d->mlx, d->win, f->n, 0, 0);
+		mlx_string_put(d->mlx, d->win, 160, 25, 0xffffff, ft_itoa(*count + 1));
 		if (d->m[o.y][o.x] == 'C')
 			(*f).c--;
 		mlx_put_image_to_window(d->mlx, d->win, (*f).p,
