@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/10 21:21:28 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/10 22:09:30 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct info {
 	int		h;
 	int		w;
 	char	**m;
+	int		l_r;
 }	t_data;
 
 typedef struct x_y {

@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 13:31:48 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/10 22:54:42 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	lines(int fd)
 	{
 		if (!line[0] || line[0] == '\n')
 			break ;
+		free (line);
 		line = get_next_line(fd);
 		i++;
 	}
