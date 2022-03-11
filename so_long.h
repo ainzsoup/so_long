@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/10 22:09:30 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/11 06:22:19 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,30 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stddef.h>
+
+typedef struct ponters{
+	void	*pl;
+	void	*pr;
+	void	*b;
+	void	*w;
+	void	*t1;
+	void	*t2;
+	void	*n;
+	void	*e;
+	void	*i;
+}	t_pointers;
+
+typedef struct t_paths{
+	char	*w;
+	char	*pl;
+	char	*pr;
+	char	*e;
+	char	*bg;
+	char	*t1;
+	char	*t2;
+	char	*c;
+	char	*n;
+}	t_paths;
 
 typedef struct t_files{
 	void	*p;
@@ -43,6 +67,11 @@ typedef struct info {
 	int		w;
 	char	**m;
 	int		l_r;
+	int		count;
+	int		i;
+	t_files	f;
+	t_paths	path;
+	t_pointers	p;
 }	t_data;
 
 typedef struct x_y {
@@ -93,15 +122,15 @@ int		get_items(t_data data);
 int		game(int keycode, t_data *data);
 void	*ft_memset(void *b, int c, size_t len);
 t_index	just_index(t_index index);
-void	move_up(t_data *d, t_coord o, t_files *f, int *count);
-void	move_down(t_data *d, t_coord o, t_files *f, int *count);
-void	move_left(t_data *d, t_coord o, t_files *f, int *count);
-void	move_right(t_data *d, t_coord o, t_files *f, int *count);
+void	move_up(t_data *d, t_coord o);
+void	move_down(t_data *d, t_coord o);
+void	move_left(t_data *d, t_coord o);
+void	move_right(t_data *d, t_coord o);
 void	init(t_files *f, t_data *data);
 int		imposter(char c);
-void	frame1(t_data *d, t_files f);
-void	frame2(t_data *d, t_files f);
 char	*ft_itoa(int n);
 char	*ft_strdup(char *s);
+void	init_sprites(t_data *d);
+void	n_of_moves(t_data *d);
 
 #endif
