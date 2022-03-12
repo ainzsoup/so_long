@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 06:29:17 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 08:21:06 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stddef.h>
+
+
+typedef struct s_traps{
+	int x;
+	int y;
+}				t_traps;
 
 typedef struct ponters{
 	void	*pl;
@@ -74,28 +80,10 @@ typedef struct info {
 	t_files	f;
 	t_paths	path;
 	t_pointers	p;
+	int 	trapCount;
+	int		*traps;
 }	t_data;
 
-typedef struct x_y {
-	int	x0;
-	int	y0;
-	int	x1;
-	int	y1;
-	int	xe;
-	int	ye;
-	int	xc;
-	int	yc;
-	int	xp;
-	int	yp;
-	int	xt;
-	int	yt;
-	int	xr;
-	int	yr;
-	int	xn;
-	int	yn;
-	int	xa;
-	int	ya;
-}	t_x_y;
 
 typedef struct cord {
 	int	x;
@@ -136,9 +124,8 @@ void	init_sprites(t_data *d);
 void	n_of_moves(t_data *d);
 char	**ft_split(char const *str, char c);
 char	*ft_strjoin(char *s1, char *s2);
-void	frames(t_data d, int i, int j);
+void	frames(t_data *d, int i, int j, int index);
 int		open_door(t_data *d);
 int		animate(t_data *d);
-void	frames(t_data d, int i, int j);
 
 #endif

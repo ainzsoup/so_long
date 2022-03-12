@@ -6,20 +6,15 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:34:11 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 03:57:34 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 07:22:42 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// void	map_exit(t_data	*d)
-// {
-// 	if (d->i == 0)
-// 		d->i = -1;
-// }
-
 void	ft_win(t_data *data)
 {
+	// win_anime(data);
 	mlx_destroy_window(data->mlx, data->win);
 	printf("You won gg.\n");
 	exit(0);

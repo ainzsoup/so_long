@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 06:53:57 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 08:36:30 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,18 @@ void	n_of_moves(t_data *d)
 	free (items);
 }
 
-void	frames(t_data d, int i, int j)
+void	frames(t_data *d, int i, int j, int index)
 {
-	static int	frame;
 
-	if (frame == 0)
+	if (d->traps[index] == 0)
 	{
-		mlx_put_image_to_window(d.mlx, d.win, d.p.t1, 75 * j, 75 * i);
-		frame++;
+		mlx_put_image_to_window(d->mlx, d->win, d->p.t1, 75 * j, 75 * i);
+		d->traps[index] = 1;
 	}
-	else if (frame == 1)
+	else if (d->traps[index] == 1)
 	{
-		mlx_put_image_to_window(d.mlx, d.win, d.p.t2, 75 * j, 75 * i);
-		frame = 0;
+		mlx_put_image_to_window(d->mlx, d->win, d->p.t2, 75 * j, 75 * i);
+		d->traps[index] = 0;
 	}
 }
 
@@ -43,20 +42,18 @@ int	animate(t_data *d)
 	int		j;
 	int		i;
 	static int delay;
+	int index;
 
+	index = 0;
 	if (delay == 3500)
 	{	
-		i = 0;
-		while (d->m[i])
+		i = -1;
+		while (d->m[++i])
 		{
-			j = 0;
-			while (d->m[i][j])
-			{
+			j = -1;
+			while (d->m[i][++j])
 				if (d->m[i][j] == 'X')
-							frames(*d, i, j);
-				j++;
-			}
-			i++;
+					frames(d, i, j, index++);
 		}
 		delay = 0;
 	}
@@ -80,7 +77,8 @@ int	open_door(t_data *d)
 			while (d->m[i][j])
 			{
 				if (d->m[i][j] == 'E')
-					mlx_put_image_to_window(d->mlx, d->win, d->p.eo, 75 * j, 75 * i);
+					mlx_put_image_to_window(d->mlx, d->win,
+					d->p.eo, 75 * j, 75 * i);
 				j++;
 			}
 			i++;
@@ -88,6 +86,41 @@ int	open_door(t_data *d)
 		d->i = 1;
 	}
 	return (1);
+}
+
+int	countTraps(t_data d)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	j = 0;
+	count = 0;
+	while (d.m[j])
+	{
+		while (d.m[j][i])
+		{
+			if (d.m[j][i] == 'X')
+				count++;
+			i++;
+		}
+		i = 0;
+		j++;
+	}
+	return (count);
+}
+
+int	*inittraps(int trapcount)
+{
+	int	i;
+	int *ret;
+
+	i = -1;
+	ret = malloc(sizeof(int) * trapcount);
+	while(i++ < trapcount)
+		ret[i] = (1 * (i % 2));
+	return (ret);
 }
 
 int	main(void)
@@ -103,6 +136,8 @@ int	main(void)
 		exit(0);
 	}
 	d.count = 0;
+	d.trapCount = countTraps(d);
+	d.traps = inittraps(d.trapCount);
 	d.mlx = mlx_init();
 	d.h = get_height(d.m);
 	d.w = get_width(d.m);
