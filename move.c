@@ -6,25 +6,53 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:34:11 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 07:22:42 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 12:06:13 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	over(t_data d)
+{
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (d.m[i])
+	{
+		j = 0;
+		while (d.m[i][j])
+		{
+			mlx_put_image_to_window(d.mlx, d.win, d.p.dk, 75 * j, 75 * i);
+			j++;
+		}
+		i++;
+	}
+	if (d.over == 1)
+		{
+			mlx_put_image_to_window(d.mlx, d.win, d.p.ud, (75 * d.w) / 2 - 150, (75 * d.h) / 2 - 150);
+			system("P=$(pgrep afplay /Users/sgamraou/Desktop/sussy.mp3) && kill -9 $P");
+			system("afplay /Users/sgamraou/Desktop/defeat.mp3 &");
+		}
+	else if (d.over == 2)
+		{
+			mlx_put_image_to_window(d.mlx, d.win, d.p.nd, (75 * d.w) / 2 - 150, (75 * d.h) / 2 - 150);
+			system("P=$(pgrep afplay /Users/sgamraou/Desktop/sussy.mp3) && kill -9 $P");
+			system("afplay /Users/sgamraou/Desktop/win.mp3 &");
+		}
+	// system("P=$(pgrep afplay /Users/sgamraou/Desktop/sussy.mp3) && kill -9 $P");
+}
+
 void	ft_win(t_data *data)
 {
-	// win_anime(data);
-	mlx_destroy_window(data->mlx, data->win);
+	data->over = 2;
 	printf("You won gg.\n");
-	exit(0);
 }
 
 void	ft_lose(t_data *data)
 {
-	mlx_destroy_window(data->mlx, data->win);
+	data->over = 1;
 	printf("GAME OVER\n");
-	exit(0);
 }
 
 void	move_up(t_data *d, t_coord o)

@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 08:36:30 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 11:34:25 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	open_door(t_data *d)
 		}
 		d->i = 1;
 	}
+	if (d->over == 1 || d->over == 2)
+		over (*d);
 	return (1);
 }
 
@@ -135,7 +137,9 @@ int	main(void)
 		printf("Error\nInvalid map bro try another one.\n");
 		exit(0);
 	}
+	system("afplay /Users/sgamraou/Desktop/sussy.mp3 &");
 	d.count = 0;
+	d.over = 0;
 	d.trapCount = countTraps(d);
 	d.traps = inittraps(d.trapCount);
 	d.mlx = mlx_init();

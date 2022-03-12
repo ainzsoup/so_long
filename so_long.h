@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 08:21:06 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 10:54:31 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ typedef struct ponters{
 	void	*e;
 	void	*eo;
 	void	*i;
+	void	*dk;
+	void	*ud;
+	void	*nd;
 }	t_pointers;
 
 typedef struct t_paths{
@@ -50,6 +53,9 @@ typedef struct t_paths{
 	char	*t2;
 	char	*c;
 	char	*n;
+	char	*dk;
+	char	*ud;
+	char	*nd;
 }	t_paths;
 
 typedef struct t_files{
@@ -82,6 +88,7 @@ typedef struct info {
 	t_pointers	p;
 	int 	trapCount;
 	int		*traps;
+	int		over;
 }	t_data;
 
 
@@ -127,5 +134,6 @@ char	*ft_strjoin(char *s1, char *s2);
 void	frames(t_data *d, int i, int j, int index);
 int		open_door(t_data *d);
 int		animate(t_data *d);
+void	over(t_data d);
 
 #endif
