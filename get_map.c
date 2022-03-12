@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/11 03:44:48 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/11 11:22:46 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int	lines(int fd)
 	return (i);
 }
 
-char	**store_map(int fd, int line)
+char	**store_map(int fd, int nline)
 {
 	int		j;
 	char	**map;
 
 	j = 0;
-	map = malloc(sizeof(char *) * (line + 1));
-	while (j < line)
+	map = malloc(sizeof(char *) * (nline + 1));
+	while (j < nline)
 	{
 		map[j] = get_next_line(fd);
 		j++;
@@ -50,10 +50,23 @@ char	**store_map(int fd, int line)
 
 char	**get_map(int fd)
 {
-	int	line;
+	int	nline;
 
-	line = lines(fd);
+	nline = lines(fd);
 	close (fd);
 	fd = open ("map.ber", O_RDONLY);
-	return (store_map(fd, line));
+	return (store_map(fd, nline));
 }
+
+
+// int main()
+// {
+// 	int fd = open ("map.ber", O_RDONLY);
+// 	int l = lines(fd);
+// 	char **map;
+// 	map = get_map(fd);
+// 	for (int i = 0; i < l; i++)
+// 		printf("%s\n", map[i]);
+// 	return 0;
+	
+// }

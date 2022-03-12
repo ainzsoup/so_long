@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/11 06:22:19 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 03:17:46 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct ponters{
 	void	*t2;
 	void	*n;
 	void	*e;
+	void	*eo;
 	void	*i;
 }	t_pointers;
 
@@ -37,6 +38,7 @@ typedef struct t_paths{
 	char	*pl;
 	char	*pr;
 	char	*e;
+	char	*eo;
 	char	*bg;
 	char	*t1;
 	char	*t2;
@@ -115,7 +117,7 @@ int		get_width(char **map);
 int		get_height(char **map);
 size_t	ft_strlen(const char *s);
 int		check_map(char **map);
-char	**get_map(int fd);
+char 	**get_map(int fd);
 void	draw_map(t_data data);
 t_coord	get_coord(t_data *data);
 int		get_items(t_data data);
@@ -132,5 +134,9 @@ char	*ft_itoa(int n);
 char	*ft_strdup(char *s);
 void	init_sprites(t_data *d);
 void	n_of_moves(t_data *d);
+char	**ft_split(char const *str, char c);
+char	*ft_strjoin(char *s1, char *s2);
+void	frames(t_data d, int i, int j);
+int		animate(t_data *d);
 
 #endif

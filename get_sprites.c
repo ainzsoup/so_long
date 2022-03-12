@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 04:15:03 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/11 05:27:56 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 03:16:08 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	init_sprites(t_data *d)
 	d->path.pl = "./sprites/player_left.xpm";
 	d->path.w = "./sprites/wall.xpm";
 	d->path.bg = "./sprites/background.xpm";
-	d->path.e = "./sprites/exit.xpm";
+	d->path.e = "./sprites/close.xpm";
+	d->path.eo = "./sprites/open.xpm";
 	d->path.t1 = "./sprites/trap1.xpm";
 	d->path.t2 = "./sprites/trap2.xpm";
 	d->path.c = "./sprites/collectible.xpm";
@@ -35,4 +36,5 @@ void	init_sprites(t_data *d)
 	d->p.t1 = mlx_xpm_file_to_image(d->mlx, d->path.t1, &x, &y);
 	d->p.t2 = mlx_xpm_file_to_image(d->mlx, d->path.t2, &x, &y);
 	d->p.w = mlx_xpm_file_to_image(d->mlx, d->path.w, &x, &y);
+	d->p.eo = mlx_xpm_file_to_image(d->mlx, d->path.eo, &x, &y);
 }

@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 13:21:21 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/11 07:38:12 by sgamraou         ###   ########.fr       */
+/*   Created: 2021/12/02 21:07:52 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/03/11 07:15:35 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	destroy(t_data *data)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	mlx_destroy_window(data->mlx, data->win);
-	exit(0);
-}
+	char	*new;
+	int		i;
+	int		j;
 
-int	game(int keycode, t_data *data)
-{
-	static int	count;
-	t_coord		co;
-
-	co = get_coord(data);
-	data->i = get_items(*data);
-	if (keycode == 53)
-		destroy(data);
-	if (keycode == 13)
-		move_up(data, co);
-	if (keycode == 1)
-		move_down(data, co);
-	if (keycode == 0)
-		move_left(data, co);
-	if (keycode == 2)
-		move_right(data, co);
-	return (0);
+	if (!s1)
+	{
+		s1 = malloc(1);
+		s1[0] = '\0';
+	}
+	i = 0;
+	j = 0;
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new)
+		return (NULL);
+	while (s1[i])
+	{
+		new[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	free (s1);
+	return (new);
 }

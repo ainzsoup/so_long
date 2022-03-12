@@ -45,4 +45,5 @@ void	draw_map(t_data dt)
 		i = 0;
 		j++;
 	}
+	int k = animate(&dt); 
 }

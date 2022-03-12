@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 14:14:20 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 03:54:33 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_1(char **m)
 		}
 		x.i++;
 	}
-	if (ascii[(unsigned char) 'E'] != 1 || ascii[(unsigned char) 'P'] != 1
+	if (ascii[(unsigned char) 'E'] == 0 || ascii[(unsigned char) 'P'] != 1
 		|| ascii[(unsigned char) 'C'] == 0)
 		return (0);
 	return (1);
@@ -62,7 +62,7 @@ int	check_2(char **m)
 	return (1);
 }
 
-int	check_bw(char **m)
+int	check_3(char **m)
 {
 	int	i;
 	int	j;
@@ -84,7 +84,7 @@ int	check_bw(char **m)
 	return (1);
 }
 
-int	check_3(char **map)
+int	check_4(char **map)
 {
 	int	i;
 
@@ -100,7 +100,7 @@ int	check_3(char **map)
 
 int	check_map(char **map)
 {	
-	if (check_1(map) && check_2(map) && check_3(map) && map && check_bw(map))
+	if (check_1(map) && check_2(map) && check_3(map) && map && check_4(map))
 		return (1);
 	return (0);
 }

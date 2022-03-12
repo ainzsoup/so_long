@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/11 06:28:43 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 03:56:08 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	n_of_moves(t_data *d)
 	items = ft_itoa(d->count + 1);
 	mlx_string_put(d->mlx, d->win, 160, 25, 0xffffff, items);
 	free (items);
-	// return (1);
 }
 
 void	frames(t_data d, int i, int j)
@@ -45,7 +44,7 @@ int	animate(t_data *d)
 	int		i;
 	static int delay;
 
-	if (delay == 3000)
+	if (delay == 3500)
 	{	
 		i = 0;
 		while (d->m[i])
@@ -54,7 +53,7 @@ int	animate(t_data *d)
 			while (d->m[i][j])
 			{
 				if (d->m[i][j] == 'X')
-					frames(*d, i, j);
+							frames(*d, i, j);
 				j++;
 			}
 			i++;
@@ -66,6 +65,29 @@ int	animate(t_data *d)
 	return (1);
 }
 
+int	open_door(t_data *d)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (d->i == 0 && d->count != 0)
+	{
+		while (d->m[i])
+		{
+			j = 0;
+			while (d->m[i][j])
+			{
+				if (d->m[i][j] == 'E')
+					mlx_put_image_to_window(d->mlx, d->win, d->p.eo, 75 * j, 75 * i);
+				j++;
+			}
+			i++;
+		}
+	}
+	return (1);
+}
+
 int	main(void)
 {
 	int		fd;
@@ -73,6 +95,14 @@ int	main(void)
 
 	fd = open ("map.ber", O_RDONLY);
 	d.m = get_map(fd);
+	// if (!check_map(d.m))
+	// {
+	// 	printf("Error\nInvalid map bro try another one.\n");
+	// 	// exit(0);
+	// }
+	// for (int i = 0; i < 8; i++)
+		// printf("%s", d.m[i]);
+	// exit (0);
 	if (!check_map(d.m))
 	{
 		printf("Error\nInvalid map bro try another one.\n");
@@ -87,6 +117,7 @@ int	main(void)
 	draw_map(d);
 	// mlx_loop_hook(d.mlx, n_of_moves, &d);
 	mlx_loop_hook(d.mlx, animate, &d);
+	mlx_loop_hook(d.mlx, open_door, &d);
 	mlx_key_hook(d.win, game, &d);
 	mlx_loop(d.mlx);
 }
