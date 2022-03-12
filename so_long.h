@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 03:17:46 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 06:29:17 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,8 @@ void	n_of_moves(t_data *d);
 char	**ft_split(char const *str, char c);
 char	*ft_strjoin(char *s1, char *s2);
 void	frames(t_data d, int i, int j);
+int		open_door(t_data *d);
 int		animate(t_data *d);
+void	frames(t_data d, int i, int j);
 
 #endif

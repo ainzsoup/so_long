@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 03:56:08 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/12 06:53:57 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	open_door(t_data *d)
 	int	i;
 	int	j;
 
+	animate (d);
 	i = 0;
 	if (d->i == 0 && d->count != 0)
 	{
@@ -84,6 +85,7 @@ int	open_door(t_data *d)
 			}
 			i++;
 		}
+		d->i = 1;
 	}
 	return (1);
 }
@@ -95,14 +97,6 @@ int	main(void)
 
 	fd = open ("map.ber", O_RDONLY);
 	d.m = get_map(fd);
-	// if (!check_map(d.m))
-	// {
-	// 	printf("Error\nInvalid map bro try another one.\n");
-	// 	// exit(0);
-	// }
-	// for (int i = 0; i < 8; i++)
-		// printf("%s", d.m[i]);
-	// exit (0);
 	if (!check_map(d.m))
 	{
 		printf("Error\nInvalid map bro try another one.\n");
@@ -115,9 +109,8 @@ int	main(void)
 	d.win = mlx_new_window(d.mlx, d.w * 75, d.h * 75, "so_long");
 	init_sprites(&d);
 	draw_map(d);
-	// mlx_loop_hook(d.mlx, n_of_moves, &d);
-	mlx_loop_hook(d.mlx, animate, &d);
 	mlx_loop_hook(d.mlx, open_door, &d);
+	// mlx_loop_hook(d.mlx, animate, &d);
 	mlx_key_hook(d.win, game, &d);
 	mlx_loop(d.mlx);
 }
