@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:21:21 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 06:29:33 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 03:24:33 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	destroy(t_data *data)
 {
+	system("P=$(pgrep afplay /Users/sgamraou/Desktop/sussy.mp3) && kill -9 $P");
 	mlx_destroy_window(data->mlx, data->win);
 	exit(0);
 }

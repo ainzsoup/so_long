@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:48 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 09:44:35 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 04:37:27 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(char *s)
 	while (s[i])
 		i++;
 	s1 = malloc(i + 1);
+	if (!s1)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

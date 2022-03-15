@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:12:02 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 14:13:46 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 04:49:21 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,21 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
+}
+
+int	*inittraps(int trapcount)
+{
+	int	i;
+	int	*ret;
+
+	i = -1;
+	ret = malloc(sizeof(int) * trapcount);
+	while (i++ < trapcount)
+		ret[i] = (1 * (i % 2));
+	return (ret);
 }

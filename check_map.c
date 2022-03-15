@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 03:54:33 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 04:36:04 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	check_1(char **m)
 		x.j = 0;
 		while (m[x.i][x.j])
 		{
-			if (m[x.i][x.j] == 'C' || m[x.i][x.j] == 'E' || m[x.i][x.j] == 'P')
+			if (m[x.i][x.j] == 'C' || m[x.i][x.j] == 'E' ||
+			m[x.i][x.j] == 'P' || m[x.i][x.j] == '0')
 			{
 				ascii[(unsigned char)m[x.i][x.j]] += 1;
 			}
@@ -35,7 +36,7 @@ int	check_1(char **m)
 		x.i++;
 	}
 	if (ascii[(unsigned char) 'E'] == 0 || ascii[(unsigned char) 'P'] != 1
-		|| ascii[(unsigned char) 'C'] == 0)
+		|| ascii[(unsigned char) 'C'] == 0 || ascii[(unsigned char) '0' == 0])
 		return (0);
 	return (1);
 }
@@ -52,7 +53,7 @@ int	check_2(char **m)
 		{
 			while (m[x.i][x.j])
 			{
-				if (m[x.i][x.j] != '1' && m[x.i][x.j] != '\n')
+				if (m[x.i][x.j] != '1')
 					return (0);
 				x.j++;
 			}
@@ -68,7 +69,7 @@ int	check_3(char **m)
 	int	j;
 	int	end;
 
-	end = ft_strlen(m[0]) - 2;
+	end = ft_strlen(m[0]) - 1;
 	i = 0;
 	while (m[i])
 	{
@@ -100,7 +101,7 @@ int	check_4(char **map)
 
 int	check_map(char **map)
 {	
-	if (check_1(map) && check_2(map) && check_3(map) && map && check_4(map))
+	if (check_1(map) && map && check_2(map) && check_3(map) && check_4(map))
 		return (1);
 	return (0);
 }

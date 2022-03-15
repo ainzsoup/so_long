@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:10 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 09:46:46 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 03:25:55 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_width(char **map)
 {
-	return (ft_strlen(map[0]) - 1);
+	return (ft_strlen(map[0]));
 }
 
 int	get_height(char **map)
