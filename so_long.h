@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 05:30:03 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/15 05:39:03 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stddef.h>
 
 typedef struct s_traps{
-	int x;
-	int y;
+	int	x;
+	int	y;
 }				t_traps;
 
 typedef struct ponters{
@@ -74,22 +74,21 @@ typedef struct i_j{
 }	t_index;
 
 typedef struct info {
-	void	*mlx;
-	void	*win;
-	int		h;
-	int		w;
-	char	**m;
-	int		l_r;
-	int		count;
-	int		i;
-	t_files	f;
-	t_paths	path;
+	void		*mlx;
+	void		*win;
+	int			h;
+	int			w;
+	char		**m;
+	int			l_r;
+	int			count;
+	int			i;
+	t_files		f;
+	t_paths		path;
 	t_pointers	p;
-	int 	trapCount;
-	int		*traps;
-	int		over;
+	int			trap_count;
+	int			*traps;
+	int			over;
 }	t_data;
-
 
 typedef struct cord {
 	int	x;
