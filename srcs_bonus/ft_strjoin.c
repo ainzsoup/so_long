@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_map.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/18 21:39:38 by sgamraou         ###   ########.fr       */
+/*   Created: 2021/12/02 21:07:52 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/03/20 20:42:13 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-char	**get_map(int fd)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*tmp;
-	char	*all;
-	char	**map;
-	int		yo;
+	char	*new;
+	int		i;
+	int		j;
 
-	yo = 0;
-	tmp = ft_strdup("");
-	all = ft_strdup("");
-	while (tmp)
+	if (!s1)
 	{
-		free(tmp);
-		tmp = get_next_line(fd);
-		if (tmp)
-			all = ft_strjoin(all, tmp);
+		s1 = malloc(1);
+		s1[0] = '\0';
 	}
-	free (tmp);
-	map = ft_split(all, '\n');
-	if (!map)
-	{
-		free (map);
+	i = 0;
+	j = 0;
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new)
 		return (NULL);
+	while (s1[i])
+	{
+		new[i] = s1[i];
+		i++;
 	}
-	free (all);
-	return (map);
+	while (s2[j])
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	free (s1);
+	return (new);
 }

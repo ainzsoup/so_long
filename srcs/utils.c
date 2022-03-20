@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:10 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 03:25:55 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:35:13 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	get_width(char **map)
 {
@@ -76,9 +76,8 @@ int	get_items(t_data data)
 	return (count);
 }
 
-t_index	just_index(t_index index)
+void	just_index(t_index *index)
 {
-	index.i = 0;
-	index.j = 0;
-	return (index);
+	index->i = 0;
+	index->j = 0;
 }

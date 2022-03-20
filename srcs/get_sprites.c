@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 04:15:03 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/12 10:17:46 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:39:37 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	init_path(t_data *d)
 {
@@ -20,8 +20,6 @@ void	init_path(t_data *d)
 	d->path.bg = "./sprites/background.xpm";
 	d->path.e = "./sprites/close.xpm";
 	d->path.eo = "./sprites/open.xpm";
-	d->path.t1 = "./sprites/trap1.xpm";
-	d->path.t2 = "./sprites/trap2.xpm";
 	d->path.c = "./sprites/collectible.xpm";
 	d->path.n = "./sprites/border.xpm";
 	d->path.dk = "./sprites/dark.xpm";
@@ -41,8 +39,6 @@ void	init_sprites(t_data *d)
 	d->p.n = mlx_xpm_file_to_image(d->mlx, d->path.n, &x, &y);
 	d->p.pl = mlx_xpm_file_to_image(d->mlx, d->path.pl, &x, &y);
 	d->p.pr = mlx_xpm_file_to_image(d->mlx, d->path.pr, &x, &y);
-	d->p.t1 = mlx_xpm_file_to_image(d->mlx, d->path.t1, &x, &y);
-	d->p.t2 = mlx_xpm_file_to_image(d->mlx, d->path.t2, &x, &y);
 	d->p.w = mlx_xpm_file_to_image(d->mlx, d->path.w, &x, &y);
 	d->p.eo = mlx_xpm_file_to_image(d->mlx, d->path.eo, &x, &y);
 	d->p.dk = mlx_xpm_file_to_image(d->mlx, d->path.dk, &x, &y);

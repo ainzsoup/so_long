@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:09:49 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/09 16:20:35 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:42:02 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	f_len(int n)
 {

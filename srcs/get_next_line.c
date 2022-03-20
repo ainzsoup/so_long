@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:48 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/18 20:30:15 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:35:01 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 char	*ft_strdup(char *s)
 {

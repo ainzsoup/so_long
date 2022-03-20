@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 04:53:28 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 05:42:17 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:35:18 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	center(int w)
 {

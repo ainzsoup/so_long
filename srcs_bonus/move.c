@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:34:11 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 05:34:04 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:42:39 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	move_up(t_data *d, t_coord o)
 {

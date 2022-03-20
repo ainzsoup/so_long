@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 04:36:04 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:34:48 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	check_1(char **m)
 {
@@ -18,7 +18,7 @@ int	check_1(char **m)
 	int		ascii[255];
 
 	ft_memset(ascii, 0, sizeof(ascii));
-	x = just_index(x);
+	just_index(&x);
 	while (m[x.i])
 	{
 		x.j = 0;
@@ -45,7 +45,7 @@ int	check_2(char **m)
 {
 	t_index	x;
 
-	x = just_index(x);
+	just_index(&x);
 	while (m[x.i])
 	{
 		x.j = 0;

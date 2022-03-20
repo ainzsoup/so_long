@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 14:21:04 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/02 14:21:16 by sgamraou         ###   ########.fr       */
+/*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
+/*   Updated: 2022/03/20 20:42:17 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	**get_map(int fd)
 {
-	int		i;
-	char	*ret;
+	char	*tmp;
+	char	*all;
+	char	**map;
+	int		yo;
 
-	i = 0;
-	ret = (char *)b;
-	while (len > 0)
+	yo = 0;
+	tmp = ft_strdup("");
+	all = ft_strdup("");
+	while (tmp)
 	{
-		ret[i] = c;
-		len--;
-		i++;
+		free(tmp);
+		tmp = get_next_line(fd);
+		if (tmp)
+			all = ft_strjoin(all, tmp);
 	}
-	return (b);
+	free (tmp);
+	map = ft_split(all, '\n');
+	if (!map)
+	{
+		free (map);
+		return (NULL);
+	}
+	free (all);
+	return (map);
 }

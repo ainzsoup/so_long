@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 05:39:03 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 21:44:55 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ t_coord	get_coord(t_data *data);
 int		get_items(t_data data);
 int		game(int keycode, t_data *data);
 void	*ft_memset(void *b, int c, size_t len);
-t_index	just_index(t_index index);
+void	just_index(t_index *index);
 void	move_up(t_data *d, t_coord o);
 void	move_down(t_data *d, t_coord o);
 void	move_left(t_data *d, t_coord o);

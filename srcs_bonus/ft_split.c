@@ -6,11 +6,11 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 16:47:48 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/17 13:49:39 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:42:09 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	x_words(char *str, char c)
 {

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:21:21 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/15 03:24:33 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:35:05 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	destroy(t_data *data)
 {
-	system("P=$(pgrep afplay /Users/sgamraou/Desktop/sussy.mp3) && kill -9 $P");
 	mlx_destroy_window(data->mlx, data->win);
 	exit(0);
 }
 
 int	game(int keycode, t_data *data)
 {
-	static int	count;
 	t_coord		co;
 
 	co = get_coord(data);
