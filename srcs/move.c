@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:34:11 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/20 21:43:52 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/24 13:22:34 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	move_up(t_data *d, t_coord o)
 			mlx_put_image_to_window(d->mlx, d->win, d->p.pr,
 				75 * o.x, 75 * (o.y - 1));
 		mlx_put_image_to_window(d->mlx, d->win, d->p.b, 75 * o.x, 75 * o.y);
-		printf("%d moves.\n", d->count);
+		ft_printf("%d moves.\n", d->count);
 		if (d->m[o.y - 1][o.x] == 'E')
 			ft_win(d);
 		else if (d->m[o.y - 1][o.x] == 'X')
@@ -54,7 +54,7 @@ void	move_down(t_data *d, t_coord o)
 			mlx_put_image_to_window(d->mlx, d->win, d->p.pr,
 				75 * o.x, 75 * (o.y + 1));
 		mlx_put_image_to_window(d->mlx, d->win, d->p.b, 75 * o.x, 75 * o.y);
-		printf("%d moves.\n", d->count);
+		ft_printf("%d moves.\n", d->count);
 		if (d->m[o.y + 1][o.x] == 'E')
 			ft_win(d);
 		else if (d->m[o.y + 1][o.x] == 'X')
@@ -78,7 +78,7 @@ void	move_left(t_data *d, t_coord o)
 		mlx_put_image_to_window(d->mlx, d->win, d->p.pl,
 			75 * (o.x - 1), 75 * o.y);
 		mlx_put_image_to_window(d->mlx, d->win, d->p.b, 75 * o.x, 75 * o.y);
-		printf("%d moves.\n", d->count);
+		ft_printf("%d moves.\n", d->count);
 		if (d->m[o.y][o.x - 1] == 'E')
 			ft_win(d);
 		else if (d->m[o.y][o.x - 1] == 'X')
@@ -102,7 +102,7 @@ void	move_right(t_data *d, t_coord o)
 		mlx_put_image_to_window(d->mlx, d->win, d->p.pr,
 			75 * (o.x + 1), 75 * o.y);
 		mlx_put_image_to_window(d->mlx, d->win, d->p.b, 75 * o.x, 75 * o.y);
-		printf("%d moves.\n", d->count);
+		ft_printf("%d moves.\n", d->count);
 		if (d->m[o.y][o.x + 1] == 'E')
 			ft_win(d);
 		else if (d->m[o.y][o.x + 1] == 'X')

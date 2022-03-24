@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:12:02 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/20 21:44:10 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/22 14:49:00 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,22 @@ int	*inittraps(int trapcount)
 	while (++i < trapcount)
 		ret[i] = (1 * (i % 2));
 	return (ret);
+}
+
+int	right_extention(char *str)
+{
+	int	len;
+
+	len = ft_strlen(str) - 1;
+	if (str[len == 'r'])
+	{
+		len--;
+		if (str[len] == 'e')
+		{
+			len--;
+			if (str[len] == 'b' && str[len - 1] == '.')
+				return (1);
+		}
+	}
+	return (0);
 }

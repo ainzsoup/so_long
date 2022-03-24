@@ -45,12 +45,12 @@ BONUS = so_long_bonus
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(MLX) -o $(NAME)
+	$(CC) $(CFLAGS) ./ft_printf/libftprintf.a $(OBJS) $(MLX) -o $(NAME)
 
 bonus : $(BONUS)
 
 $(BONUS) : $(OBJS_BONUS)
-	$(CC) $(CFLAGS) $(OBJS_BONUS) $(MLX) -o $(BONUS)
+	$(CC) $(CFLAGS) ./ft_printf/libftprintf.a $(OBJS_BONUS) $(MLX) -o $(BONUS)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)

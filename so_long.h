@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:36:42 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/20 21:44:55 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/24 12:27:15 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stddef.h>
+# include "./ft_printf/ft_printf.h"
 
 typedef struct s_traps{
 	int	x;
@@ -138,5 +139,7 @@ int		*inittraps(int trapcount);
 void	over(t_data d);
 void	ft_win(t_data *data);
 void	ft_lose(t_data *data);
+int		right_extention(char *str);
+int		destroy(t_data *data);
 
 #endif
