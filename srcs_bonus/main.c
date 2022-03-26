@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/24 13:21:38 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/26 16:10:05 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int	main(int ac, char **av)
 	draw_map(d);
 	mlx_loop_hook(d.mlx, open_door, &d);
 	mlx_key_hook(d.win, game, &d);
+	mlx_hook(d.win, 17, 0, destroy, &d);
 	mlx_loop(d.mlx);
 }

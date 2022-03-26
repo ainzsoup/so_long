@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:38 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/20 19:34:59 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/26 02:23:56 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	**get_map(int fd)
 	char	*tmp;
 	char	*all;
 	char	**map;
-	int		yo;
 
-	yo = 0;
 	tmp = ft_strdup("");
 	all = ft_strdup("");
 	while (tmp)
