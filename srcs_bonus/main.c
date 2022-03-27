@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:52:40 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/26 16:10:05 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/27 11:56:26 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_error(char *msg)
 void	maperror(void)
 {
 	printf("Error\nInvalid map bro try another one.\n");
-	exit(0);
+	exit(1);
 }
 
 int	main(int ac, char **av)
@@ -43,7 +43,7 @@ int	main(int ac, char **av)
 		return (ft_error("Error\nUsage : ./so_long_bonus + file.ber"));
 	fd = open (av[1], O_RDONLY);
 	d.m = get_map(fd);
-	if (!check_map(d.m))
+	if (!(check_map(d.m) && right_extention(av[1])))
 		maperror();
 	system("afplay ./sus.mp3 &");
 	d.count = 0;

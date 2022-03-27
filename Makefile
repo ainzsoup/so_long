@@ -1,7 +1,7 @@
 SRCS = ./srcs/main.c \
 ./srcs/ft_strjoin.c \
 ./srcs/ft_split.c \
-./srcs/animation.c \
+./srcs/door.c \
 ./srcs/winorlose.c \
 ./srcs/get_sprites.c \
 ./srcs/get_next_line.c \

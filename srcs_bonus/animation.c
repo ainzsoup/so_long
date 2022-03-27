@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 04:46:56 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/26 03:10:15 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/27 11:43:21 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,10 @@ int	open_door(t_data *d)
 	int	i;
 	int	j;
 
+	d->i = get_items(*d);
 	animate (d);
 	i = 0;
-	if (d->i == 0 && d->count != 0)
+	if (d->i == 0)
 	{
 		while (d->m[i])
 		{
