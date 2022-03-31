@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 06:54:27 by sgamraou          #+#    #+#             */
-/*   Updated: 2022/03/20 19:34:48 by sgamraou         ###   ########.fr       */
+/*   Updated: 2022/03/31 23:49:10 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	check_4(char **map)
 
 int	check_map(char **map)
 {	
-	if (check_1(map) && map && check_2(map) && check_3(map) && check_4(map))
+	if (map && check_1(map) && check_2(map) && check_3(map) && check_4(map))
 		return (1);
 	return (0);
 }
